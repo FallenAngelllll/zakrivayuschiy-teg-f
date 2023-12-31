@@ -33,50 +33,48 @@
   background-color: var(--background-color);
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
   align-items: center;
-  block-size: clamp(20.18rem, 19.1870rem + 4.2366vw, 23rem);
   inline-size: clamp(23.438rem, 16.2859rem + 30.5157vw, 43.75rem);
   margin: 100px auto;
-  padding: 25px 0;
-  gap: 24px;
   border: 2px solid var(--accent-color);
   font-family: var(--accent-font-family);
-}
-
-.header__cover {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  gap: 20px;
 }
 
 .header__tag {
   margin: clamp(7.5rem, 7.1479rem + 1.5023vw, 8.5rem) auto 20px auto;
   font-size: clamp(3.063rem, 2.7109rem + 1.5023vw, 4.063rem);
   text-transform: uppercase;
+  padding-block-start: 23px;
 }
 
 .header__title {
   font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
   text-transform: uppercase;
+  margin-block-start: 21px;
 }
 
 @media (width <= 375px) {
-  .header__title {
-    font-size: clamp(2.625rem, 0.0795rem + 12.7273vw, 3.0625rem);
+  .header__tag {
+    padding-block-start: 15px;
   }
-}
-
-.header__theme-menu {
-  padding-inline-start: 20px;
+  .header__title {
+    font-size: 14px;
+    margin-block-start: 10px;
+  }
 }
 
 .theme-menu__list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
+  margin: 24px auto 20px 20px;
   font-size: 14px;
+}
+
+@media (width <= 375px) {
+  .theme-menu__list {
+    margin-top: 17px;
+  }
 }
 
 .theme-menu__button {
@@ -153,6 +151,7 @@
 
 .card__image-text {
   position: absolute;
+  z-index: 1;
   opacity: 0.5;
   color: var(--accent-color);
   font-family: var(--accent-font-family);
@@ -171,6 +170,7 @@
 
 .picture {
   object-fit: cover;
+  object-position: center;
   outline: 2px solid var(--accent-color);
   inline-size: 100%;
   aspect-ratio: 1/1;
@@ -225,7 +225,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  padding: 0 25px 21px;
+  padding: 0 25px 25px;
 }
 
 .card__icon-button {
@@ -297,14 +297,20 @@
 .save-button {
   display: flex;
   gap: 8px;
-  margin: 50px auto;
+  margin: 0px auto 50px;
   padding: 15px 20px;
   align-items: center;
   background-color: var(--background-color);
 }
 
+@media (width <= 375px) {
+  .save-button {
+    flex-direction: column;
+  }
+}
+
 .save-button .button__text {
-  padding: 5px 4px 5px 3px;
+  padding: 3px 3px 0 0;
 }
 
 .save-button__icon {
