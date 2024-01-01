@@ -321,6 +321,13 @@
   z-index: 1;
 }
 
+@media (width <= 375px) {
+  .save-button__icon {
+    inline-size: 28px;
+    block-size: 28px;
+  }
+}
+
 .save-dialog {
   background-color: var(--background-color);
   border: 2px solid var(--accent-color);
